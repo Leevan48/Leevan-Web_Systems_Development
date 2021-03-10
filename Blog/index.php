@@ -1,29 +1,13 @@
-<?php
-require_once("database.php");
+<?php require_once "partial_header.php"; ?>
 
-$sql = "SELECT * FROM blogpost";
-$result = $conn->query($sql, PDO::FETCH_ASSOC);
-?>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead">
+                <a class="btn btn-primary" href="login.php" role="button">Login</a>
+                <a class="btn btn-primary" href="register.php" role="button">Register</a>
+            </p>
+        </div>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog Post Titles</title>
-</head>
-<body>
-    <h1>Blog Post Titles </h1>
-
-    <ol>
-    <?php
-        foreach ($result as $row) {
-          echo "<li>"  .
-                " <a href='blogpost.php?id=" . $row['id'] . "'>" .$row['title']."</a>"."<br></br>";
-
-        }
-        ?>
-    </ol>
-
-
-</body>
-</html>
+<?php require_once "partial_footer.php"; ?>
